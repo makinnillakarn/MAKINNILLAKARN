@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = 'https://docs.google.com/spreadsheets/d/1MD0hsMFgT7o_gEPoUhqHCkairyqYsxTGMq9JLmNjg0o/edit?usp=sharing';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwCxa5E9QUQiHTX3r3BWB6muy1rK8qmuoZicVt4WEcjvAhp1OyEVFsWlQAf_byOB4zVqQ/exec';
 const CSV_URL = 'YOUR_CSV_URL';
 
 document.addEventListener('DOMContentLoaded', () => {
