@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | BareFit Underwear</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="nav-header">
+      <a href="index.html" class="brand-logo">BareFit</a>
+      <a href="product.html" class="btn btn-secondary">เลือกสินค้าเพิ่ม</a>
+    </header>
+
+    <div class="form-card">
+      <h2 style="text-align: center; margin-bottom: 0.5rem;">ยืนยันการสั่งซื้อ</h2>
+      <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem;">กรอกข้อมูลเพื่อจัดส่งสินค้าแบบเก็บเงินปลายทาง / โอนชำระ</p>
+      
+      <form id="orderForm">
+        <div class="form-group">
+          <label>ชื่อ-นามสกุล ผู้รับ</label>
+          <input type="text" id="customerName" placeholder="ระบุชื่อจริงและนามสกุล" required>
+        </div>
+        <div class="form-group">
+          <label>เบอร์โทรศัพท์ / LINE ID</label>
+          <input type="text" id="contact" placeholder="สำหรับติดต่อจัดส่ง" required>
+        </div>
+        <div class="form-group">
+          <label>ที่อยู่</label>
+          <input type="text" id="contact" placeholder="สำหรับติดต่อจัดส่ง" required>
+        </div>
+        <div class="form-group">
+          <label>รายการสินค้า</label>
+          <input type="text" id="items" readonly style="background:#f0ede8; color:#333; font-weight:600;">
+        </div>
+        <div class="form-group">
+          <label>ยอดรวมทั้งสิ้น (บาท)</label>
+          <input type="number" id="total" readonly style="background:#f0ede8; color:#333; font-weight:600;">
+        </div>
+        <div class="form-group">
+          <label>ไซส์ที่ต้องการ / หมายเหตุเพิ่มเติม</label>
+          <textarea id="note" rows="3" placeholder="ระบุไซส์ (M/L/XL) หรือที่อยู่จัดส่งเพิ่มเติม"></textarea>
+        </div>
+        <button type="submit" class="btn" style="width:100%;">สั่งซื้อสินค้าทันที</button>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
