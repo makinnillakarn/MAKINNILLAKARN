@@ -1,102 +1,102 @@
 [
   {
     "id": 1,
-    "name": "BareFit Seamless Crew Neck (รุ่นไร้ตะเข็บ)",
-    "mood": "seamless",
-    "type": "t-shirt",
-    "size": "M / L / XL",
-    "price": 229,
-    "image": "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=500&auto=format&fit=crop&q=80",
-    "description": "ผ้าพรีเมียมบางเบา 0.1mm ไร้ตะเข็บข้าง สัมผัสนุ่มเบาเหมือนผิวที่สอง"
+    "name": "สายคล้องบัตร - Focus (สมาธิ & สอบผ่าน)",
+    "mood": "Focus",
+    "type": "Lanyard",
+    "size": "ONE SIZE",
+    "price": 129,
+    "image": "สายคล้องบัตร - Focus (สมาธิ & สอบผ่าน).jpg",
+    "description": "โทนสีเขียวพาสเทล/เขียวขี้ม้า พร้อมจี้หินอเมทิสต์/ฟลูออไรท์ ช่วยรวบรวมสมาธิก่อนเข้าห้องสอบ"
   },
   {
     "id": 2,
-    "name": "BareFit Seamless V-Neck (คอวีไร้ตะเข็บ)",
-    "mood": "seamless",
-    "type": "t-shirt",
-    "size": "M / L / XL",
-    "price": 229,
-    "image": "https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?w=500&auto=format&fit=crop&q=80",
-    "description": "เสื้อคอวีไร้รอยต่อ ผ้าลื่นเย็นสบาย ทรงสวยไม่ย้วยง่าย"
+    "name": "สายคล้องบัตร - Romance (เมตตามหาเสน่ห์)",
+    "mood": "Romance",
+    "type": "Lanyard",
+    "size": "ONE SIZE",
+    "price": 129,
+    "image": "สายคล้องบัตร - Romance (เมตตามหาเสน่ห์),
+    "description": "โทนสีชมพูโอมเบร พร้อมจี้หินโรสควอตซ์ เสริมเสน่ห์ให้เพื่อนและอาจารย์รักเอ็นดู"
   },
   {
     "id": 3,
-    "name": "Organic Cotton Everyday Tee",
-    "mood": "cotton",
-    "type": "t-shirt",
-    "size": "M / L / XL",
-    "price": 199,
-    "image": "https://images.unsplash.com/photo-1627225924765-552d49cf47ad?w=500&auto=format&fit=crop&q=80",
-    "description": "คอตตอนออร์แกนิคแท้ 100% สัมผัสนุ่ม อ่อนโยนต่อผิว ใส่ได้ทุกวัน"
+    "name": "สายคล้องบัตร - Energy (พลังงาน & โชคดี)",
+    "mood": "Energy",
+    "type": "Lanyard",
+    "size": "ONE SIZE",
+    "price": 129,
+    "image": "สายคล้องบัตร - Energy (พลังงาน & โชคดี).jpg",
+    "description": "โทนสีส้ม/เทาสตรีท พร้อมจี้หินไหมทอง/ไทเกอร์อายส์ ปลุกไฟในตัว มั่นใจทุกการเสนอหน้าชั้นเรียน"
   },
   {
     "id": 4,
-    "name": "Organic Cotton Oversized Tee",
-    "mood": "cotton",
-    "type": "t-shirt",
-    "size": "M / L / XL",
-    "price": 259,
-    "image": "https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=500&auto=format&fit=crop&q=80",
-    "description": "ทรงโอเวอร์ไซส์ผ้านุ่มระบายอากาศได้ดีเยี่ยม ลดการอับชื้นตลอดวัน"
+    "name": "สายคล้องบัตร - Peace (ใจสงบ & ขจัดความเครียด)",
+    "mood": "Peace",
+    "type": "Lanyard",
+    "size": "ONE SIZE",
+    "price": 129,
+    "image": "สายคล้องบัตร - Peace (ใจสงบ & ขจัดความเครียด).jpg",
+    "description": "โทนสีฟ้าพาสเทล/น้ำเงินคราม พร้อมจี้หินลาพิส ลาซูลี คลายความตื่นเต้นยามพรีเซนต์งาน"
   },
   {
     "id": 5,
-    "name": "Pro-Sport Flex Tee",
-    "mood": "sport",
-    "type": "t-shirt",
-    "size": "M / L / XL",
-    "price": 279,
-    "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=500&auto=format&fit=crop&q=80",
-    "description": "ผ้ายืดหยุ่น 4 ทิศทาง แห้งไว ไม่อับชื้น เหมาะสำหรับการออกกำลังกาย"
+    "name": "พวงกุญแจ - Focus (เกรด A ปังๆ)",
+    "mood": "Focus",
+    "type": "Keychain",
+    "size": "ONE SIZE",
+    "price": 99,
+    "image": "พวงกุญแจ - Focus (เกรด A ปังๆ).jpg",
+    "description": "ดีไซน์โซ่เงินผสมเชือกพาราคอร์ดสีเขียว-ดำ ห้อยจี้ลูกศรโฟกัส เสริมดวงเรื่องการอ่านหนังสือติดสปีด"
   },
   {
     "id": 6,
-    "name": "Pro-Sport Active Long Sleeve",
-    "mood": "sport",
-    "type": "t-shirt",
-    "size": "M / L / XL",
-    "price": 329,
-    "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500&auto=format&fit=crop&q=80",
-    "description": "เสื้อแขนยาวกระชับกล้ามเนื้อ ระบายเหงื่อรวดเร็ว ลดแรงเสียดสี"
+    "name": "พวงกุญแจ - Romance (สยบคนแอบชอบ)",
+    "mood": "Romance",
+    "type": "Keychain",
+    "size": "ONE SIZE",
+    "price": 99,
+    "image": "พวงกุญแจ - Romance (สยบคนแอบชอบ).jpg",
+    "description": "ดีไซน์หัวใจโลหะมินิมอล/หินสีชมพู เสริมความรัก ดึงดูดสายตา ดึงดูดความสัมพันธ์ดีๆ เข้ามา"
   },
   {
     "id": 7,
-    "name": "Ultra Soft Lounge Tee",
-    "mood": "lounge",
-    "type": "t-shirt",
-    "size": "Free Size",
-    "price": 249,
-    "image": "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?w=500&auto=format&fit=crop&q=80",
-    "description": "ทรงหลวมสวมสบาย สัมผัสเบาเหมือนไม่ได้ใส่ เหมาะสำหรับใส่นอนพักผ่อน"
+    "name": "พวงกุญแจ - Energy (สายลุย ตัวตึง)",
+    "mood": "Energy",
+    "type": "Keychain",
+    "size": "ONE SIZE",
+    "price": 99,
+    "image": "พวงกุญแจ - Energy (สายลุย ตัวตึง).jpg",
+    "description": "ดีไซน์แนว Street/Grunge ห้อยโซ่เงินคู่สัญลักษณ์ลูกไฟ เติมแอเนอร์จี้ให้พร้อมลุยทุกกิจกรรม"
   },
   {
     "id": 8,
-    "name": "Modal Premium Luxe Tee",
-    "mood": "seamless",
-    "type": "t-shirt",
-    "size": "M / L / XL",
-    "price": 299,
-    "image": "https://images.unsplash.com/photo-1722310752951-4d459d28c678?w=500&auto=format&fit=crop&q=80",
-    "description": "ผ้าทอใยไม้ธรรมชาติ สัมผัสเย็น ลื่นนุ่มกว่าคอตตอนทั่วไป 2 เท่า"
+    "name": "พวงกุญแจ - Peace (พักผ่อน ฮีลใจ)",
+    "mood": "Peace",
+    "type": "Keychain",
+    "size": "ONE SIZE",
+    "price": 99,
+    "image": "พวงกุญแจ - Peace (พักผ่อน ฮีลใจ).jpg",
+    "description": "ดีไซน์ก้อนหินธรรมชาติทรงหยดน้ำสีฟ้า/ม่วง ช่วยเรียกสติและฮีลใจยามเหนื่อยล้าจากงานกลุ่ม"
   },
   {
     "id": 9,
-    "name": "Bamboo Antibacterial Polo",
-    "mood": "cotton",
-    "type": "polo",
-    "size": "M / L / XL",
-    "price": 350,
-    "image": "https://images.unsplash.com/photo-1671438118097-479e63198629?w=500&auto=format&fit=crop&q=80",
-    "description": "เสื้อโปโลพรีเมียมจากเส้นใยเยื่อไผ่ธรรมชาติ นุ่ม เย็นสบาย ยับยั้งแบคทีเรียและกลิ่นอับชื้นได้ถึง 99% เหมาะสำหรับลุคทางการและสมาร์ทแคชชวล"
+    "name": "เคสใส่บัตรพร้อมพวงกุญแจ - Relax & Chill",
+    "mood": "Peace",
+    "type": "Card Holder",
+    "size": "ONE SIZE",
+    "price": 159,
+    "image": "เคสใส่บัตรพร้อมพวงกุญแจ - Relax & Chill.jpg",
+    "description": "เคสหนัง PU สีสกายบลู/ม่วงพาสเทล พกบัตรหอง่ายๆ พร้อมสัญลักษณ์ยันต์มินิมอลเสริมความราบรื่น"
   },
   {
     "id": 10,
-    "name": "BareFit Starter Pack (เสื้อ 3 ตัว)",
-    "mood": "lounge",
-    "type": "set",
-    "size": "M / L / XL",
-    "price": 650,
-    "image": "https://images.unsplash.com/photo-1564859228273-274232fdb516?w=500&auto=format&fit=crop&q=80",
-    "description": "เซ็ตเสื้อยืดสุดคุ้ม 3 ตัว คละสีคลาสสิก (Black / Slate / Nude)"
+    "name": "เคสใส่บัตรพร้อมพวงกุญแจ - Wealth & Success",
+    "mood": "Energy",
+    "type": "Card Holder",
+    "size": "ONE SIZE",
+    "price": 159,
+    "image": "เคสใส่บัตรพร้อมพวงกุญแจ - Wealth & Success.jpg",
+    "description": "เคสหนังสีเขียวเหนี่ยวทรัพย์/ดำเท่ๆ พร้อมสัญลักษณ์เหรียญมงคลมินิมอล เสริมดวงการเงิน ให้มีใช้ไม่ขาดมือ"
   }
 ]
