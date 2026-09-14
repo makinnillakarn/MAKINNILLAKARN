@@ -1,23 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Prata&display=swap');
 
 :root {
-  /* Core Palette — MUTELU CLUB Dark Aesthetic */
-  --bg-color: #0F1012;
-  --card-bg: #181A1D;
-  --ink: #0F1012;
-  --text-main: #F2F0E9;
-  --text-muted: #8E939D;
-  --accent-gold: #D4AF37;
-  --border-light: #282C32;
-  --border-dark: #F2F0E9;
-  --shadow-soft: 0 10px 28px rgba(0, 0, 0, 0.5);
-  --shadow-hover: 0 20px 44px rgba(0, 0, 0, 0.7);
+  /* Core palette — LUCKY CHARM Aesthetic Mutelu (Dark Charcoal & Warm Brass) */
+  --bg-color: #121110;
+  --card-bg: #1B1917;
+  --ink: #121110;
+  --text-main: #EDE6D8;
+  --text-muted: #9A907C;
+  --accent-gold: #C9A15B;
+  --border-light: #2E2B26;
+  --border-dark: #EDE6D8;
+  --shadow-soft: 0 10px 28px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 20px 44px rgba(0, 0, 0, 0.55);
 
-  /* Mutelu Mood Tags — 4 ด้านเสริมดวง */
-  --energy-tag: #E07A5F;  /* Energy & Protection - สีส้มสตรีท */
-  --peace-tag: #70822D;   /* Peace & Calming - สีฟ้า/ม่วงพาสเทล */
-  --focus-tag: #588B8B;   /* Focus & Wisdom - สีเขียวเหนี่ยวทรัพย์ */
-  --romance-tag: #E0A96D; /* Love & Charisma - สีชมพูโรสโกลด์ */
+  /* Mutelu Mood Tags — 4 categories for Everyday Student Life */
+  --energy-tag: #E07A5F;   /* Energy & Protection - สีส้มสตรีท/เทอร์ราคอตต้า */
+  --peace-tag: #7B8CDE;    /* Peace & Calming - สีฟ้า/ม่วงพาสเทล */
+  --focus-tag: #81B29A;    /* Focus & Wisdom - สีเขียวเหนี่ยวทรัพย์ */
+  --romance-tag: #E8A598;  /* Love & Charisma - สีชมพูโรสโกลด์ */
 
   --radius-sm: 2px;
   --radius-md: 4px;
@@ -30,7 +30,7 @@ body {
   font-family: 'Jost', sans-serif;
   font-weight: 400;
   background-color: var(--bg-color);
-  background-image: radial-gradient(circle at 50% -10%, rgba(212, 175, 55, 0.08), transparent 55%);
+  background-image: radial-gradient(circle at 50% -10%, rgba(201, 161, 91, 0.08), transparent 55%);
   color: var(--text-main);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -113,7 +113,7 @@ a { text-decoration: none; color: inherit; }
 .hero p {
   color: var(--text-muted);
   font-size: 1.08rem;
-  max-width: 52ch;
+  max-width: 48ch;
   margin: 0 0 2.5rem;
 }
 
@@ -183,7 +183,7 @@ a { text-decoration: none; color: inherit; }
   object-fit: cover;
   border-radius: var(--radius-sm);
   margin-bottom: 1.2rem;
-  background-color: #22252A;
+  background-color: #26221D;
   filter: grayscale(10%) brightness(0.96);
   transition: filter 0.5s var(--ease), transform 0.6s var(--ease);
 }
@@ -197,7 +197,7 @@ a { text-decoration: none; color: inherit; }
 .card p { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.2rem; flex-grow: 1; }
 .card .price { font-size: 1.05rem; font-weight: 500; font-family: 'Prata', serif; color: var(--accent-gold); margin-bottom: 1rem; }
 
-/* ============ Mutelu Mood Tags ============ */
+/* ============ Category Tags (Aesthetic Mutelu 4 Moods) ============ */
 .card-tag {
   display: inline-block;
   font-family: 'Prata', serif;
@@ -279,7 +279,7 @@ a { text-decoration: none; color: inherit; }
   transition: border-color 0.25s var(--ease);
 }
 
-.form-group input::placeholder, .form-group textarea::placeholder { color: #5C626D; }
+.form-group input::placeholder, .form-group textarea::placeholder { color: #5C5646; }
 
 .form-group input:focus, .form-group textarea:focus {
   outline: none;
