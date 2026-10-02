@@ -3,49 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkout |LUCKY CHARM</title>
+  <title>Checkout | 7GUY</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <header class="nav-header">
-      <a href="index.html" class="brand-logo">BareFit</a>
+      <a href="index.html" class="brand-logo">7GUY</a>
       <a href="product.html" class="btn btn-secondary">เลือกสินค้าเพิ่ม</a>
     </header>
 
     <div class="form-card">
       <h2 style="text-align: center; margin-bottom: 0.5rem;">ยืนยันการสั่งซื้อ</h2>
       <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 2rem;">กรอกข้อมูลเพื่อจัดส่งสินค้าแบบเก็บเงินปลายทาง / โอนชำระ</p>
-      
+
       <form id="orderForm">
         <div class="form-group">
-          <label>ชื่อ-นามสกุล ผู้รับ</label>
+          <label for="customerName">ชื่อ-นามสกุล ผู้รับ</label>
           <input type="text" id="customerName" placeholder="ระบุชื่อจริงและนามสกุล" required>
         </div>
         <div class="form-group">
-          <label>เบอร์โทรศัพท์ / LINE ID</label>
+          <label for="contact">เบอร์โทรศัพท์ / LINE ID</label>
           <input type="text" id="contact" placeholder="สำหรับติดต่อจัดส่ง" required>
         </div>
         <div class="form-group">
-          <label>ที่อยู่</label>
-          <input type="text" id="contact" placeholder="สำหรับติดต่อจัดส่ง" required>
+          <label for="address">ที่อยู่จัดส่ง</label>
+          <textarea id="address" rows="2" placeholder="บ้านเลขที่ ถนน แขวง/ตำบล เขต/อำเภอ จังหวัด รหัสไปรษณีย์" required></textarea>
         </div>
         <div class="form-group">
-          <label>รายการสินค้า</label>
-          <input type="text" id="items" readonly style="background:#f0ede8; color:#333; font-weight:600;">
+          <label for="items">รายการสินค้า</label>
+          <input type="text" id="items" readonly style="color:var(--text-main); font-weight:600;">
         </div>
         <div class="form-group">
-          <label>ยอดรวมทั้งสิ้น (บาท)</label>
-          <input type="number" id="total" readonly style="background:#f0ede8; color:#333; font-weight:600;">
+          <label for="size">ไซส์</label>
+          <select id="size" required></select>
         </div>
         <div class="form-group">
-          <label>ไซส์ที่ต้องการ / หมายเหตุเพิ่มเติม</label>
-          <textarea id="note" rows="3" placeholder="ระบุไซส์ (ONESIDE) หรือที่อยู่จัดส่งเพิ่มเติม"></textarea>
+          <label for="qty">จำนวน (ชิ้น)</label>
+          <div class="qty-box">
+            <button type="button" id="qtyMinus" aria-label="ลดจำนวน">−</button>
+            <input type="number" id="qty" value="1" min="1" max="99" required>
+            <button type="button" id="qtyPlus" aria-label="เพิ่มจำนวน">+</button>
+          </div>
+          <small id="unitPriceText" style="color:var(--text-muted);"></small>
+        </div>
+        <div class="form-group">
+          <label for="total">ยอดรวมทั้งสิ้น (บาท)</label>
+          <input type="number" id="total" readonly style="color:var(--text-main); font-weight:600;">
+        </div>
+        <div class="form-group">
+          <label for="note">หมายเหตุเพิ่มเติม (ถ้ามี)</label>
+          <textarea id="note" rows="2" placeholder="เช่น สีที่ต้องการ เวลาที่สะดวกรับของ"></textarea>
         </div>
         <button type="submit" class="btn" style="width:100%;">สั่งซื้อสินค้าทันที</button>
       </form>
     </div>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
