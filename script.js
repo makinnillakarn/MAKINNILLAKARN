@@ -3,7 +3,7 @@ const escapeHtml = (v) =>
 
 // สร้าง Supabase client เฉพาะหน้าที่โหลดไลบรารีไว้ (order.html, admin.html)
 const db = (window.supabase && typeof SUPABASE_URL !== 'undefined')
-  ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+  ? window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY)
   : null;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,59 +14,47 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   const productList = document.getElementById('product-list');
   if (productList) {
-    fetch('products.json')
-      .then(res => res.json())
-      .then(products => {
-        const moodFilter = urlParams.get('mood') || 'all';
-        renderProducts(products, moodFilter);
+    fetch('products.json').then(res => res.json()).then(products => {
+      const moodFilter = urlParams.get('mood') || 'all';
+      renderProducts(products, moodFilter);
 
-        const filterBar = document.getElementById('filter-bar');
-        if (filterBar) {
-          const activeBtn = filterBar.querySelector(`[data-mood="${moodFilter}"]`);
-          if (activeBtn) activeBtn.classList.add('active');
+      const filterBar = document.getElementById('filter-bar');
+      if (filterBar) {
+        const activeBtn = filterBar.querySelector(`[data-mood="${moodFilter}"]`);
+        if (activeBtn) activeBtn.classList.add('active');
 
-          filterBar.addEventListener('click', (e) => {
-            if (e.target.tagName === 'BUTTON') {
-              filterBar.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-              e.target.classList.add('active');
-              renderProducts(products, e.target.dataset.mood);
-            }
-          });
-        }
-      })
-      .catch(err => {
-        console.error('โหลด products.json ไม่สำเร็จ', err);
-        productList.innerHTML = '<p style="text-align:center;">โหลดสินค้าไม่สำเร็จ กรุณารีเฟรชหน้าอีกครั้ง</p>';
-      });
+        filterBar.addEventListener('click', (e) => {
+          if (e.target.tagName === 'BUTTON') {
+            filterBar.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            renderProducts(products, e.target.dataset.mood);
+          }
+        });
+      }
+    });
   }
 
   function renderProducts(products, filter) {
+    productList.innerHTML = '';
     const filtered = filter === 'all' ? products : products.filter(p => p.mood === filter);
-
-    productList.innerHTML = filtered.map(p => {
+    filtered.forEach(p => {
       const name = p.name.trim();
-      const orderUrl =
-        `order.html?id=${encodeURIComponent(p.id)}` +
-        `&item=${encodeURIComponent(name)}` +
-        `&price=${encodeURIComponent(p.price)}` +
-        `&size=${encodeURIComponent(p.size)}`;
-
-      return `
+      productList.innerHTML += `
         <div class="card">
-          <span class="card-tag tag-${escapeHtml(p.mood)}">${escapeHtml(p.mood)}</span>
-          <img src="${encodeURI(p.image)}" alt="${escapeHtml(name)}">
-          <h3>${escapeHtml(name)}</h3>
-          <p>${escapeHtml(p.description)}</p>
-          <div class="price">฿${escapeHtml(p.price)}</div>
-          <a href="${orderUrl}" class="btn" style="text-align:center;">สั่งซื้อสินค้า</a>
+          <span class="card-tag tag-${p.mood}">${p.mood}</span>
+          <img src="${p.image}" alt="${name}">
+          <h3>${name}</h3>
+          <p>${p.description}</p>
+          <div class="price">฿${p.price}</div>
+          <a href="order.html?item=${encodeURIComponent(name)}&price=${p.price}&size=${encodeURIComponent(p.size)}" class="btn" style="text-align:center;">สั่งซื้อสินค้า</a>
         </div>
       `;
-    }).join('');
+    });
   }
 
   // ==========================================
-  // ส่วนหน้าสั่งซื้อ -> บันทึกลง Supabase ผ่านฟังก์ชัน place_order
-  // (ตัดสต็อก + บันทึกออเดอร์พร้อมกัน, Database Webhook จะส่ง Telegram ให้เอง)
+  // ส่วนหน้าสั่งซื้อ -> บันทึกลง Supabase
+  // (Database Webhook จะเรียก Edge Function ส่ง Telegram ให้เอง)
   // ==========================================
   const orderForm = document.getElementById('orderForm');
   if (orderForm && db) {
@@ -75,8 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sizeSelect = document.getElementById('size');
 
     const qtyInput = document.getElementById('qty');
-    const productId = Number(urlParams.get('id'));
-    const unitPrice = Number(urlParams.get('price')) || 0; // ใช้แสดงผลเท่านั้น ราคาจริงคำนวณที่ฐานข้อมูล
+    const unitPrice = Number(urlParams.get('price')) || 0;
     if (urlParams.has('item')) itemInput.value = urlParams.get('item');
     document.getElementById('unitPriceText').textContent = `ราคาต่อชิ้น ฿${unitPrice.toLocaleString('th-TH')}`;
 
@@ -90,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     qtyInput.addEventListener('input', updateTotal);
     updateTotal();
 
-    // สร้างตัวเลือกไซส์จากข้อมูลสินค้า เช่น "ONE SIZE" หรือ "M / L / XL"
+    // สร้างตัวเลือกไซส์จากข้อมูลสินค้า เช่น "M / L / XL"
     const sizes = (urlParams.get('size') || 'M / L / XL').split('/').map(s => s.trim()).filter(Boolean);
     sizeSelect.innerHTML = sizes.map(s => `<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join('');
 
@@ -102,30 +89,25 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.innerText = 'กำลังส่งคำสั่งซื้อ...';
       submitBtn.disabled = true;
 
-      if (!productId) {
-        alert('ไม่พบรหัสสินค้า กรุณากลับไปเลือกสินค้าใหม่');
-        submitBtn.innerText = originalText;
-        submitBtn.disabled = false;
-        return;
-      }
+      const order = {
+        customer_name: document.getElementById('customerName').value.trim(),
+        contact: document.getElementById('contact').value.trim(),
+        address: document.getElementById('address').value.trim(),
+        items: itemInput.value,
+        size: sizeSelect.value,
+        quantity: getQty(),
+        unit_price: unitPrice,
+        total: unitPrice * getQty(),
+        note: document.getElementById('note').value.trim() || null,
+      };
 
       try {
-        const { error } = await db.rpc('place_order', {
-          p_product_id: productId,
-          p_quantity: getQty(),
-          p_customer_name: document.getElementById('customerName').value.trim(),
-          p_contact: document.getElementById('contact').value.trim(),
-          p_address: document.getElementById('address').value.trim(),
-          p_size: sizeSelect.value,
-          p_note: document.getElementById('note').value.trim() || null,
-        });
+        const { error } = await db.from('orders').insert(order);
         if (error) throw error;
         window.location.href = 'thankyou.html';
       } catch (err) {
         console.error(err);
-        alert(err.message && err.message.includes('สินค้า')
-          ? err.message
-          : 'เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง');
+        alert('เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง');
         submitBtn.innerText = originalText;
         submitBtn.disabled = false;
       }
